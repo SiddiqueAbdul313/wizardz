@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Exo 2", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+::selection {
+  background-color: #baff66;
+  color: saddlebrown;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+section {
+  height: 100%;
+  width: 100%;
+  background-color: seashell;
+  position: relative;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1vw 2vw;
+}
+nav h1 {
+  font-size: 2vw;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+nav h4 {
+  font-size: 1.2vw;
+  font-weight: 400;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+nav h1 i {
+  display: inline-block;
+  font-size: 2vw;
+  rotate: 45deg;
+  margin-right: 0.3vw;
+}
+nav button,
+.center-part1 button {
+  padding: 0.5vw 1vw;
+  background-color: seashell;
+  border: 1px solid saddlebrown;
+  outline: none;
+  font-size: 1vw;
+  display: flex;
+  text-transform: capitalize;
+  cursor: pointer;
+  font-weight: 300;
+  color: saddlebrown;
+}
+nav button:hover,
+.center-part1 button:hover {
+  background-color: saddlebrown;
+  transition: 0.3s linear;
+  color: seashell;
+}
+.part2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3vw;
+}
+.part2 h4 {
+  margin: 0 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.part2 h4::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.part2 h4.hover::before {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.center {
+  height: 80%;
+  width: 100%;
+  display: flex;
+}
+.center-part1 {
+  color: seashell;
+  width: 50%;
+  height: 100%;
+  padding: 4.5vw 3vw;
+  color: #000;
+}
+.center-part1 h1,
+p {
+  margin: 2vw;
+}
+.center-part1 h1 {
+  font-size: 3vw;
+  font-weight: 500;
+  width: 60%;
+}
+.center-part1 p {
+  font-size: 1vw;
+  width: 60%;
+}
+.center-part1 button {
+  font-size: 0.9vw;
+  padding: 0.7vw 1.5vw;
+  margin: 0 2vw;
+}
+.center-part2 {
+  position: relative;
+  color: seashell;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.center-part2 img {
+  position: absolute;
+  height: 100%;
+  width: 65%;
+}
+.section1bottom {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  align-items: center;
+  background-color: seashell;
+}
+.section1bottom::-webkit-scrollbar {
+  display: none;
+}
+.section1bottom img {
+  scale: 0.5;
+  background: none;
+  height: 100px;
+}
+.section2 .services {
+  padding: 2vw 4vw;
+  display: flex;
+  align-items: center;
+}
+.section2 .services h3 {
+  font-size: 3vw;
+  font-weight: 600;
+  background-color: saddlebrown;
+  color: seashell;
+  padding: 0.1vw 1vw;
+  border-radius: 0px 10px 10px 0px;
+}
+.section2 .services p {
+  font-size: 1vw;
+  width: 50%;
+}
+.container {
+  height: 80%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 6vw;
+}
+.elem {
+  margin: 0 auto;
+  height: 35vh;
+  width: 35vw;
+  background-color: rgba(152, 72, 14, 0.356);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  border-radius: 2rem;
+  border: 1px solid seashell;
+  display: flex;
+  box-shadow: 0px 10px 1px 0px #000;
+  overflow: hidden;
+}
+.elem .text {
+  display: flex;
+  gap: 8vw;
+  flex-direction: column;
+  padding: 1vw 2vw;
+  font-size: 1.5vw;
+  font-weight: 600;
+  width: 50%;
+}
+.elem .text span {
+  font-size: 1vw;
+  font-weight: 400;
+}
+
+.elem .text i {
+  background-color: saddlebrown;
+  color: seashell;
+  padding: 0.5vw;
+  border-radius: 50%;
+  margin-right: 0.5vw;
+}
+.elem .image {
+  background-color: rgba(223, 182, 153, 0.267);
+  width: 50%;
+  height: 100%;
+  border-radius: 0px 10px 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
