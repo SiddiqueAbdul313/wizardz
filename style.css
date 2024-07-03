@@ -10,6 +10,9 @@
   background-color: #baff66;
   color: saddlebrown;
 }
+body {
+  overflow-x: hidden;
+}
 html,
 body {
   width: 100%;
@@ -137,10 +140,11 @@ p {
 }
 .section1bottom {
   position: relative;
-  display: flex;
   justify-content: center;
   overflow-x: scroll;
   scroll-behavior: smooth;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
   background-color: seashell;
 }
@@ -151,11 +155,20 @@ p {
   scale: 0.5;
   background: none;
   height: 100px;
+  z-index: 1;
+}
+.section2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .section2 .services {
   padding: 2vw 4vw;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  height: 100%;
+  margin-bottom: 3vw;
 }
 .section2 .services h3 {
   font-size: 3vw;
@@ -163,10 +176,10 @@ p {
   background-color: saddlebrown;
   color: seashell;
   padding: 0.1vw 1vw;
-  border-radius: 0px 10px 10px 0px;
+  border-radius: 5px;
 }
 .section2 .services p {
-  font-size: 1vw;
+  font-size: 1.2vw;
   width: 50%;
 }
 .container {
@@ -174,10 +187,11 @@ p {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 0 6vw;
+  gap: 2vw;
 }
-.elem {
-  margin: 0 auto;
+.elem,
+.elem1 {
+  margin: auto;
   height: 35vh;
   width: 35vw;
   background-color: rgba(152, 72, 14, 0.356);
@@ -189,28 +203,32 @@ p {
   box-shadow: 0px 10px 1px 0px #000;
   overflow: hidden;
 }
-.elem .text {
+.elem .text,
+.elem1 .text {
   display: flex;
-  gap: 8vw;
+  gap: 10vw;
   flex-direction: column;
   padding: 1vw 2vw;
   font-size: 1.5vw;
   font-weight: 600;
   width: 50%;
 }
-.elem .text span {
+.elem .text span,
+.elem1 .text span {
   font-size: 1vw;
   font-weight: 400;
 }
 
-.elem .text i {
+.elem .text i,
+.elem1 .text i {
   background-color: saddlebrown;
   color: seashell;
   padding: 0.5vw;
   border-radius: 50%;
   margin-right: 0.5vw;
 }
-.elem .image {
+.elem .image,
+.elem1 .image {
   background-color: rgba(223, 182, 153, 0.267);
   width: 50%;
   height: 100%;
@@ -218,4 +236,113 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (width<1024px) {
+  .center {
+    width: 100%;
+  }
+  .center-part1 {
+    transform: translateY(30%);
+    width: 60%;
+
+    padding: 1vw;
+  }
+  .center-part1 h1 {
+    font-size: 3.5vw;
+  }
+  .center-part1 p {
+    font-size: 1.5vw;
+  }
+  .center-part1 button {
+    padding: 1vw 2vw;
+  }
+  .elem .image,
+  .elem1 .image {
+    scale: 0.5;
+  }
+  .elem,
+  .elem1 {
+    height: 23vh;
+    flex-shrink: 0;
+  }
+  .elem .text span,
+  .elem1 .text span {
+    font-size: 1.5vw;
+  }
+  .elem .text,
+  .elem1 .text {
+    gap: 12vh;
+    padding: 2vw;
+  }
+}
+@media (width<768px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (width<600px) {
+    nav .part2{
+      display: none;
+    }
+  section{
+    height: 80vh;
+  }
+  .center{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scale: 1;
+    margin-top: 5rem;
+  }
+  .center-part1{
+    width: 50%;
+    scale: 1.5;
+  }
+  .center-part1 h1{
+    width: 100%;
+    font-size: 5vw;
+  }
+  .center-part1 p{
+    width: 100%;
+    font-size: 2.5vw;
+  }
+  .center-part1 button{
+    padding: .5rem 2rem;
+    font-size: 2vw;
+  }
+  .center-part2{
+    scale: 2.5;
+  }
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .elem,
+  .elem1 {
+    width: 80%;
+  }
+  .elem .text,
+  .elem1 .text {
+    gap: 10vh;
+    flex-direction: column;
+    padding: 5vw 3vw;
+    font-size: 3.5vw;
+    font-weight: 600;
+    width: 50%;
+  }
+  .section2 .services h3{
+    font-size: 2rem;
+  }
+  .section2 .services p{
+    font-size: .5rem;
+    width: 80%;
+    margin: 1rem;
+  }
+  .elem .text span,
+  .elem1 .text span{
+    font-size: 2vw;
+  }
+  .section1bottom{
+    display: none;
+  }
 }
